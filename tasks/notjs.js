@@ -44,8 +44,11 @@ module.exports = function (grunt) {
         
         grunt.log.writeln('Rendering input file "' + filepath + '"');
         return new Promise(function(resolve, reject) {
-          notjs.renderPath(path.resolve(filepath), options, function(result) {
-            resolve(result);
+          notjs.renderPath(path.resolve(filepath), options, function(err, data) {
+            if (err) {
+              return reject(err);
+            }
+            resolve(data);
           });
         });
       });
@@ -60,6 +63,8 @@ module.exports = function (grunt) {
         grunt.log.writeln('File "' + file.dest + '" created.');
         
         done();
+      }, function(errs) {
+        grunt.fail.fatal(errs.stack);
       });
     });
   });
