@@ -25,68 +25,55 @@ In your project's Gruntfile, add a section named `notjs` to the data object pass
 ```js
 grunt.initConfig({
   notjs: {
-    options: {
-      // Task-specific options go here.
+    implicit_scope: {
+      options: {
+        scope: {
+          title: 'Yes', 
+          items: ['Foo', 'Bar']
+        }
+      },
+      files: {
+        'tmp/implicit_scope.html': 'test/fixtures/implicit_scope.not.js'
+      }
     },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
+    explicit_scope: {
+      options: {
+        scope: {
+          title: 'Yes', 
+          items: ['Foo', 'Bar']
+        },
+        explicit: true
+      },
+      files: {
+        'tmp/explicit_scope.html': 'test/fixtures/explicit_scope.not.js'
+      }
+    }
   },
 })
 ```
 
 ### Options
 
+#### options.scope
+Type: `Object`
+Default value: `{}`
+
+An object passed to `not.js` to use as the scope object for each file.
+
+#### options.explicit
+Type: `Boolean`
+Default value: `false`
+
+A boolean value indicating if the files in question require `not.js` themselves already and use explicit contexts.
+
 #### options.separator
 Type: `String`
-Default value: `',  '`
+Default value: `\n`
 
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
-
-### Usage Examples
-
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
-```js
-grunt.initConfig({
-  notjs: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  notjs: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-})
-```
+If multiple `src` files map to one `dest`, the string to join them all with.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_
 
 ## License
 Copyright (c) 2014 Wesley Wigham. Licensed under the MIT license.

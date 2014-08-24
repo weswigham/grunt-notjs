@@ -23,7 +23,7 @@ module.exports = function (grunt) {
     var options = this.options({
       scope: {},
       explicit: false,
-      seperator: '\n' //for concatenating results, if that's a thing you do
+      separator: '\n' //for concatenating results, if that's a thing you do
     });
     
     var done = this.async();
@@ -54,7 +54,7 @@ module.exports = function (grunt) {
       });
       
       Promise.all(proms).then(function(processed) {
-        var result = processed.join(options.seperator);
+        var result = processed.join(options.separator);
 
         // Write the destination file.
         grunt.file.write(file.dest, result);
