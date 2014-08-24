@@ -1,5 +1,5 @@
 {
-  "name": "grunt-not.js",
+  "name": "grunt-notjs",
   "version": "0.0.1",
   "description": "Compile static not.js files to html",
   "repository": "http://github.com/weswigham/grunt-notjs",
