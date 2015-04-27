@@ -18,17 +18,16 @@
   "license": "MIT",
   "dependencies": {
     "not.js": "*",
-    "promise": "~5.0"
+    "promise": "*"
   },
   "devDependencies": {
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-jshint": "~0.8.0",
-    "grunt-contrib-nodeunit": "~0.3.0",
-    "grunt": "~0.4.2",
-    "jshint-stylish": "~0.1.5",
-    "load-grunt-tasks": "~0.3.0",
-    "grunt-cli": "~0.1.13",
-    "harmonize": "*"
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-nodeunit": "*",
+    "grunt": "*",
+    "jshint-stylish": "*",
+    "load-grunt-tasks": "*",
+    "grunt-cli": "*"
   },
   "scripts": {
     "test": "grunt test"
