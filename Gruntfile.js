@@ -7,6 +7,7 @@
  */
 
 'use strict';
+require("harmonize")();
 
 module.exports = function (grunt) {
   // load all npm grunt tasks
