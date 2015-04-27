@@ -1,4 +1,4 @@
-# grunt-notjs
+# grunt-notjs ![status](https://travis.ci/weswigham/grunt-notjs.svg)
 
 > Compile static not.js files to html
 
