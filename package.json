@@ -30,6 +30,6 @@
     "grunt-cli": "*"
   },
   "scripts": {
-    "test": "grunt --harmony --harmony-proxies test"
+    "test": "node --harmony --harmony_proxies --harmony-proxies ./node_modules/grunt-cli/bin/grunt test"
   }
 }
