@@ -27,7 +27,8 @@
     "grunt": "~0.4.2",
     "jshint-stylish": "~0.1.5",
     "load-grunt-tasks": "~0.3.0",
-    "grunt-cli": "~0.1.13"
+    "grunt-cli": "~0.1.13",
+    "harmonize": "*"
   },
   "scripts": {
     "test": "grunt test"
